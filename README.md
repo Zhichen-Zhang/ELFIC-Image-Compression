@@ -3,5 +3,5 @@ Codes for ELFIC: A Learning-based Flexible Image Codec with Rate-Distortion-Comp
 
 
 # pretrained PSNR model
-# https://pan.baidu.com/s/1jNrr76qUk9i5OrkfyoljnQ
-# 0sum
+# https://pan.baidu.com/s/1DN2ERM6ETTyQW1sld_7bXQ 
+# code: dux5
