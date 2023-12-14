@@ -22,7 +22,7 @@ def model_test():
                 'h_mean_s': [int(192), int(256), 320]}
     _Bpp, _MS_SSIM, _PSNR, _encT, _decT = [], [], [], [], []
     img_path = './kodim'
-    ckpt = f'./High/checkpoint_latest.pth'
+    ckpt = f'./Low/checkpoint_latest.pth'
     codec = GainCA(rate_point=5)
     codec.eval()
     state_dict = torch.load(ckpt, map_location='cpu')["state_dict"]
@@ -103,7 +103,7 @@ def model_test_IDCA():
     compressai.set_entropy_coder("ans")
     _Bpp, _MS_SSIM, _PSNR, _encT, _decT = [], [], [], [], []
     img_path = './kodim'
-    ckpt = f'./High/checkpoint_latest.pth'
+    ckpt = f'./Low/checkpoint_latest.pth'
     codec = GainCA(rate_point=5)
     codec.eval()
     state_dict = torch.load(ckpt, map_location='cpu')["state_dict"]
@@ -113,7 +113,7 @@ def model_test_IDCA():
     codec.update(force=True)
 
     lambdaC = 0.5
-    with open(os.path.join('./', f'search_result.json'), 'r') as f:
+    with open(os.path.join('./', f'low_rate.json'), 'r') as f:
         search_result = json.load(f)
         print(len(search_result))
     codec.sample_active_subnet(mode='largest')  # the largest complexity
