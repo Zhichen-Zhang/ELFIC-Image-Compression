@@ -17,7 +17,7 @@ torch.set_num_threads(1)
 def model_test():
     compressai.set_entropy_coder("ans")
     curr_cfg = {'g_a': [192, 192, 192, 320], 'h_a': [],
-                'g_s': [int(66), int(48), int(84), 3],
+                'g_s': [int(192), int(192), int(192), 3],
                 'h_scale_s': [int(192), int(256), 320],
                 'h_mean_s': [int(192), int(256), 320]}
     _Bpp, _MS_SSIM, _PSNR, _encT, _decT = [], [], [], [], []
